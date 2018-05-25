@@ -4,7 +4,7 @@ Augmenta protocol :
 
 https://github.com/Theoriz/Augmenta/wiki
 
-This code has been tested on Chataigne 1.4.0b
+This code has been tested on Chataigne 1.5.0
 
 */
 
@@ -34,18 +34,22 @@ function oscEvent(address,args)
 		{
 			setAugmentaPerson(local.values.person4, args);
 		}
+
+		if(local.parameters.singlePersonMode.getData() == "newest")
+		{
+			// Fill with Newest
+
+		} else if(local.parameters.singlePersonMode.getData() == "oldest")
+		{
+			// Fill with Oldest
+		}
 	}
-
-	// TODO
-
-	// Fill Newest, Oldest
 }
 
 function moduleParameterChanged(param)
 {
 
 	script.log("Parameter changed : "+param.name+" : "+param.get());
-
 }
 
 function setAugmentaPerson(person, args)
