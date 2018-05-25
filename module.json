@@ -51,7 +51,6 @@
 
 			"type":"Integer",
 			"min":0
-
 		},
 		"centroidX":
 		{
@@ -83,7 +82,7 @@
 			"min":0,
 			"max":1
 		},
-		"boudingRectX":
+		"boundingRectX":
 		{
 			"type":"Float",
 			"min":0,
@@ -163,7 +162,7 @@
 			"type":"Integer",
 			"min":0
 		},
-		"SceneDepth":
+		"sceneDepth":
 		{
 			"type":"Integer",
 			"min":0

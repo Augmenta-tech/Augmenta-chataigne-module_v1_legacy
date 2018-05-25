@@ -51,18 +51,18 @@ function setAugmentaPerson(pid,
 	local.values.pid.set(pid);
 	local.values.oid.set(oid);
 	local.values.age.set(age);
-	local.values.centroid.x.set(centroidX);
-	local.values.centroid.y.set(centroidY);
-	local.values.velocity.x.set(velocityX);
-	local.values.velocity.y.set(velocityY);
+	local.values.centroidX.set(centroidX);
+	local.values.centroidY.set(centroidY);
+	local.values.velocityX.set(velocityX);
+	local.values.velocityY.set(velocityY);
 	local.values.depth.set(depth);
-	local.values.boundingRect.x.set(boundingRectX);
-	local.values.boundingRect.y.set(boundingRectY);
+	local.values.boundingRectX.set(boundingRectX);
+	local.values.boundingRectY.set(boundingRectY);
 	local.values.boundingRectWidth.set(boundingRectWidth);
 	local.values.boundingRectHeight.set(boundingRectHeight);
-	local.values.highest.x.set(highestX);
-	local.values.highest.y.set(highestY);
-	local.values.highest.z.set(highestZ);
+	local.values.highestX.set(highestX);
+	local.values.highestY.set(highestY);
+	local.values.highestZ.set(highestZ);
 }
 
 function setAugmentaScene(currentTime,
@@ -78,7 +78,9 @@ function setAugmentaScene(currentTime,
 	local.values.currentTime.set(currentTime);
 	local.values.percentCovered.set(percentCovered);
 	local.values.numPeople.set(numPeople);
-	local.values.averageMotion.set(averageMotion);
+	local.values.averageMotionX.set(averageMotionX);
+	local.values.averageMotionY.set(averageMotionY);
 	local.values.width.set(width);
 	local.values.height.set(height);
+	local.values.sceneDepth.set(depth);
 }
