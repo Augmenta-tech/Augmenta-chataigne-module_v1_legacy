@@ -8,38 +8,31 @@ This code has been tested on Chataigne 1.4.0b
 
 */
 
-var scene = local.values.scene;
-
 function oscEvent(address,args)
 {
 	//script.log("received osc"+address);
 
 	if(address=="/au/scene")
 	{
-		setAugmentaScene(args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7]);
+		setAugmentaScene(local.values.scene, args);
 
 	}else if (address=="/au/personUpdated") // parse only persons with oid = 0
 	{
 		if(args[1] == 0)
 		{
-			setAugmentaPerson(local.values.person0, args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7],
-						  args[8], args[9], args[10], args[11], args[12], args[13], args[14]);
+			setAugmentaPerson(local.values.person0, args);
 		} else if(args[1] == 1)
 		{
-			setAugmentaPerson(local.values.person1, args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7],
-						  args[8], args[9], args[10], args[11], args[12], args[13], args[14]);
+			setAugmentaPerson(local.values.person1, args);
 		} else if(args[1] == 2)
 		{
-			setAugmentaPerson(local.values.person2, args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7],
-						  args[8], args[9], args[10], args[11], args[12], args[13], args[14]);
+			setAugmentaPerson(local.values.person2, args);
 		} else if(args[1] == 3)
 		{
-			setAugmentaPerson(local.values.person3, args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7],
-						  args[8], args[9], args[10], args[11], args[12], args[13], args[14]);
+			setAugmentaPerson(local.values.person3, args);
 		} else if(args[1] == 4)
 		{
-			setAugmentaPerson(local.values.person4, args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7],
-						  args[8], args[9], args[10], args[11], args[12], args[13], args[14]);
+			setAugmentaPerson(local.values.person4, args);
 		}
 	}
 
@@ -55,57 +48,35 @@ function moduleParameterChanged(param)
 
 }
 
-function setAugmentaPerson(person,
-						   pid,
-						   oid,
-						   age,
-						   centroidX,
-						   centroidY,
-						   velocityX,
-						   velocityY,
-						   depth,
-						   boundingRectX,
-						   boundingRectY,
-						   boundingRectWidth,
-						   boundingRectHeight,
-						   highestX,
-						   highestY,
-						   highestZ)
+function setAugmentaPerson(person, args)
 {
 
-	person.pid.set(pid);
-	person.oid.set(oid);
-	person.age.set(age);
-	person.centroidX.set(centroidX);
-	person.centroidY.set(centroidY);
-	person.velocityX.set(velocityX);
-	person.velocityY.set(velocityY);
-	person.depth.set(depth);
-	person.boundingRectX.set(boundingRectX);
-	person.boundingRectY.set(boundingRectY);
-	person.boundingRectWidth.set(boundingRectWidth);
-	person.boundingRectHeight.set(boundingRectHeight);
-	person.highestX.set(highestX);
-	person.highestY.set(highestY);
-	person.highestZ.set(highestZ);
+	person.pid.set(args[0]);
+	person.oid.set(args[1]);
+	person.age.set(args[2]);
+	person.centroidX.set(args[3]);
+	person.centroidY.set(args[4]);
+	person.velocityX.set(args[5]);
+	person.velocityY.set(args[6]);
+	person.depth.set(args[7]);
+	person.boundingRectX.set(args[8]);
+	person.boundingRectY.set(args[9]);
+	person.boundingRectWidth.set(args[10]);
+	person.boundingRectHeight.set(args[11]);
+	person.highestX.set(args[12]);
+	person.highestY.set(args[13]);
+	person.highestZ.set(args[14]);
 }
 
-function setAugmentaScene(currentTime,
-						  percentCovered,
-						  numPeople,
-						  averageMotionX,
-						  averageMotionY,
-						  width,
-						  height,
-						  depth)
+function setAugmentaScene(scene, args)
 {
 
-	scene.currentTime.set(currentTime);
-	scene.percentCovered.set(percentCovered);
-	scene.numPeople.set(numPeople);
-	scene.averageMotionX.set(averageMotionX);
-	scene.averageMotionY.set(averageMotionY);
-	scene.width.set(width);
-	scene.height.set(height);
-	scene.depth.set(depth);
+	scene.currentTime.set(args[0]);
+	scene.percentCovered.set(args[1]);
+	scene.numPeople.set(args[2]);
+	scene.averageMotionX.set(args[3]);
+	scene.averageMotionY.set(args[4]);
+	scene.width.set(args[5]);
+	scene.height.set(args[6]);
+	scene.depth.set(args[7]);
 }
