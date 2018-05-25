@@ -13,8 +13,8 @@
 			"type":"Enum",
 			"options":
 			{
-				"Newest":"newest",
-				"Oldest":"oldest"
+				"Oldest":"oldest",
+				"Newest":"newest"
 			}
 		}	
 	},
