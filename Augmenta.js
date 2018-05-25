@@ -1,4 +1,3 @@
-
 /* 
 
 Augmenta protocol :
@@ -8,6 +7,9 @@ https://github.com/Theoriz/Augmenta/wiki
 This code has been tested on Chataigne 1.4.0b
 
 */
+
+var p0 = local.values.personWithOid0;
+var scene = local.values.scene;
 
 function oscEvent(address,args)
 {
@@ -48,21 +50,21 @@ function setAugmentaPerson(pid,
 						   highestZ)
 {
 
-	local.values.pid.set(pid);
-	local.values.oid.set(oid);
-	local.values.age.set(age);
-	local.values.centroidX.set(centroidX);
-	local.values.centroidY.set(centroidY);
-	local.values.velocityX.set(velocityX);
-	local.values.velocityY.set(velocityY);
-	local.values.depth.set(depth);
-	local.values.boundingRectX.set(boundingRectX);
-	local.values.boundingRectY.set(boundingRectY);
-	local.values.boundingRectWidth.set(boundingRectWidth);
-	local.values.boundingRectHeight.set(boundingRectHeight);
-	local.values.highestX.set(highestX);
-	local.values.highestY.set(highestY);
-	local.values.highestZ.set(highestZ);
+	p0.pid.set(pid);
+	p0.oid.set(oid);
+	p0.age.set(age);
+	p0.centroidX.set(centroidX);
+	p0.centroidY.set(centroidY);
+	p0.velocityX.set(velocityX);
+	p0.velocityY.set(velocityY);
+	p0.depth.set(depth);
+	p0.boundingRectX.set(boundingRectX);
+	p0.boundingRectY.set(boundingRectY);
+	p0.boundingRectWidth.set(boundingRectWidth);
+	p0.boundingRectHeight.set(boundingRectHeight);
+	p0.highestX.set(highestX);
+	p0.highestY.set(highestY);
+	p0.highestZ.set(highestZ);
 }
 
 function setAugmentaScene(currentTime,
@@ -75,12 +77,12 @@ function setAugmentaScene(currentTime,
 						  depth)
 {
 
-	local.values.currentTime.set(currentTime);
-	local.values.percentCovered.set(percentCovered);
-	local.values.numPeople.set(numPeople);
-	local.values.averageMotionX.set(averageMotionX);
-	local.values.averageMotionY.set(averageMotionY);
-	local.values.width.set(width);
-	local.values.height.set(height);
-	local.values.sceneDepth.set(depth);
+	scene.currentTime.set(currentTime);
+	scene.percentCovered.set(percentCovered);
+	scene.numPeople.set(numPeople);
+	scene.averageMotionX.set(averageMotionX);
+	scene.averageMotionY.set(averageMotionY);
+	scene.width.set(width);
+	scene.height.set(height);
+	scene.depth.set(depth);
 }

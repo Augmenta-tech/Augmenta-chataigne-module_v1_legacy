@@ -1,14 +1,14 @@
 {
 	"name":"Augmenta",
 	"type":"OSC",
-	"path":"THEORIZ",
+	"path":"Theoriz",
 
-	"hasInputs":true,
-	"hasOutputs":false,
+	"hasInput":true,
+	"hasOutput":false,
 
 	"parameters":
 	{
-		"Oldest":
+		"Example parameter":
 		{
 			"type":"Boolean",
 			"default":false
@@ -17,12 +17,8 @@
 	},
 
 	"defaults":
-	{
-		"autoAdd":false,
-		"autoRange":false,
-		"splitArguments":false,
-		
-		"oscInput":
+	{		
+		"OSC Input":
 		{
 			"localPort":12000,
 			"local":false,
@@ -36,136 +32,147 @@
 
 	"values":
 	{
-		"pid":
+		"Scene":
 		{
-			"type":"Integer",
-			"min":0
-		},
-		"oid":
-		{
-			"type":"Integer",
-			"min":0
-		},
-		"age":
-		{
+			"type":"Container",
 
-			"type":"Integer",
-			"min":0
+			"currentTime":
+			{
+				"type":"Integer",
+				"min":0
+			},
+			"percentCovered":
+			{
+				"type":"Float",
+				"min":0,
+				"max":1
+			},
+			"numPeople":
+			{
+				"type":"Integer",
+				"min":0
+			},
+			"averageMotionX":
+			{
+				"type":"Float",
+				"min":0,
+				"max":1
+			},
+			"averageMotionY":
+			{
+				"type":"Float",
+				"min":0,
+				"max":1
+			},
+			"width":
+			{
+				"type":"Integer",
+				"min":0
+			},
+			"height":
+			{
+				"type":"Integer",
+				"min":0
+			},
+			"depth":
+			{
+				"type":"Integer",
+				"min":0
+			}
 		},
-		"centroidX":
+
+		"person with oid 0":
 		{
-			"type":"Float",
-			"min":0,
-			"max":1
-		},
-		"centroidY":
-		{
-			"type":"Float",
-			"min":0,
-			"max":1
-		},
-		"velocityX":
-		{
-			"type":"Float",
-			"min":-1,
-			"max":1
-		},
-		"velocityY":
-		{
-			"type":"Float",
-			"min":-1,
-			"max":1
-		},
-		"depth":
-		{
-			"type":"Float",
-			"min":0,
-			"max":1
-		},
-		"boundingRectX":
-		{
-			"type":"Float",
-			"min":0,
-			"max":1
-		},
-		"boundingRectY":
-		{
-			"type":"Float",
-			"min":0,
-			"max":1
-		},
-		"boundingRectWidth":
-		{
-			"type":"Float",
-			"min":0,
-			"max":1
-		},
-		"boundingRectHeight":
-		{
-			"type":"Float",
-			"min":0,
-			"max":1
-		},
-		"HighestX":
-		{
-			"type":"Float",
-			"min":0,
-			"max":1
-		},
-		"HighestY":
-		{
-			"type":"Float",
-			"min":0,
-			"max":1
-		},
-		"HighestZ":
-		{
-			"type":"Float",
-			"min":0,
-			"max":1
-		},
-		"currentTime":
-		{
-			"type":"Integer",
-			"min":0
-		},
-		"percentCovered":
-		{
-			"type":"Float",
-			"min":0,
-			"max":1
-		},
-		"numPeople":
-		{
-			"type":"Integer",
-			"min":0
-		},
-		"averageMotionX":
-		{
-			"type":"Float",
-			"min":0,
-			"max":1
-		},
-		"averageMotionY":
-		{
-			"type":"Float",
-			"min":0,
-			"max":1
-		},
-		"width":
-		{
-			"type":"Integer",
-			"min":0
-		},
-		"height":
-		{
-			"type":"Integer",
-			"min":0
-		},
-		"sceneDepth":
-		{
-			"type":"Integer",
-			"min":0
+			"type":"Container",
+
+			"pid":
+			{
+				"type":"Integer",
+				"min":0
+			},
+			"oid":
+			{
+				"type":"Integer",
+				"min":0
+			},
+			"age":
+			{
+
+				"type":"Integer",
+				"min":0
+			},
+			"centroidX":
+			{
+				"type":"Float",
+				"min":0,
+				"max":1
+			},
+			"centroidY":
+			{
+				"type":"Float",
+				"min":0,
+				"max":1
+			},
+			"velocityX":
+			{
+				"type":"Float",
+				"min":-1,
+				"max":1
+			},
+			"velocityY":
+			{
+				"type":"Float",
+				"min":-1,
+				"max":1
+			},
+			"depth":
+			{
+				"type":"Float",
+				"min":0,
+				"max":1
+			},
+			"boundingRectX":
+			{
+				"type":"Float",
+				"min":0,
+				"max":1
+			},
+			"boundingRectY":
+			{
+				"type":"Float",
+				"min":0,
+				"max":1
+			},
+			"boundingRectWidth":
+			{
+				"type":"Float",
+				"min":0,
+				"max":1
+			},
+			"boundingRectHeight":
+			{
+				"type":"Float",
+				"min":0,
+				"max":1
+			},
+			"HighestX":
+			{
+				"type":"Float",
+				"min":0,
+				"max":1
+			},
+			"HighestY":
+			{
+				"type":"Float",
+				"min":0,
+				"max":1
+			},
+			"HighestZ":
+			{
+				"type":"Float",
+				"min":0,
+				"max":1
+			}
 		}
 	}
 }
