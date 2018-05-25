@@ -1,4 +1,4 @@
-﻿Augmenta Chataigne Module
+﻿Augmenta Chataigne module
 =======================
 
 A [Chataigne][] Module maintained by [Théoriz studio][]
@@ -28,11 +28,7 @@ Then restart [Chataigne][]
 
 Use
 ---
-In [Chataigne][]
-
-```
-The module will appear in a Theoriz submenu alongside the other modules
-```
+In [Chataigne][], the module will appear in a Theoriz submenu alongside the other modules.
 
 Documentation
 -------------
@@ -41,10 +37,16 @@ Data protocol is here : https://github.com/Theoriz/Augmenta/wiki
 
 Chataigne documentation is here : http://benjamin.kuperberg.fr/chataigne/docs
 
+Dev
+---
+
+In [Chataigne][], click on the "edit" button to modify the script. (javascript)
+You can also modify the Json module if needed directly from the file.
+
 Contribute
 ----------
 
-Fork and submit pull requests.
+Fork and submit pull requests! :)
 
 Thanks
 ------
