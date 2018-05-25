@@ -8,7 +8,6 @@ This code has been tested on Chataigne 1.4.0b
 
 */
 
-var p0 = local.values.personWithOid0;
 var scene = local.values.scene;
 
 function oscEvent(address,args)
@@ -19,11 +18,34 @@ function oscEvent(address,args)
 	{
 		setAugmentaScene(args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7]);
 
-	}else if (address=="/au/personUpdated" && args[1] == 0) // parse only persons with oid = 0
+	}else if (address=="/au/personUpdated") // parse only persons with oid = 0
 	{
-		setAugmentaPerson(args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7],
+		if(args[1] == 0)
+		{
+			setAugmentaPerson(local.values.person0, args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7],
 						  args[8], args[9], args[10], args[11], args[12], args[13], args[14]);
+		} else if(args[1] == 1)
+		{
+			setAugmentaPerson(local.values.person1, args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7],
+						  args[8], args[9], args[10], args[11], args[12], args[13], args[14]);
+		} else if(args[1] == 2)
+		{
+			setAugmentaPerson(local.values.person2, args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7],
+						  args[8], args[9], args[10], args[11], args[12], args[13], args[14]);
+		} else if(args[1] == 3)
+		{
+			setAugmentaPerson(local.values.person3, args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7],
+						  args[8], args[9], args[10], args[11], args[12], args[13], args[14]);
+		} else if(args[1] == 4)
+		{
+			setAugmentaPerson(local.values.person4, args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7],
+						  args[8], args[9], args[10], args[11], args[12], args[13], args[14]);
+		}
 	}
+
+	// TODO
+
+	// Fill Newest, Oldest
 }
 
 function moduleParameterChanged(param)
@@ -33,7 +55,8 @@ function moduleParameterChanged(param)
 
 }
 
-function setAugmentaPerson(pid,
+function setAugmentaPerson(person,
+						   pid,
 						   oid,
 						   age,
 						   centroidX,
@@ -50,21 +73,21 @@ function setAugmentaPerson(pid,
 						   highestZ)
 {
 
-	p0.pid.set(pid);
-	p0.oid.set(oid);
-	p0.age.set(age);
-	p0.centroidX.set(centroidX);
-	p0.centroidY.set(centroidY);
-	p0.velocityX.set(velocityX);
-	p0.velocityY.set(velocityY);
-	p0.depth.set(depth);
-	p0.boundingRectX.set(boundingRectX);
-	p0.boundingRectY.set(boundingRectY);
-	p0.boundingRectWidth.set(boundingRectWidth);
-	p0.boundingRectHeight.set(boundingRectHeight);
-	p0.highestX.set(highestX);
-	p0.highestY.set(highestY);
-	p0.highestZ.set(highestZ);
+	person.pid.set(pid);
+	person.oid.set(oid);
+	person.age.set(age);
+	person.centroidX.set(centroidX);
+	person.centroidY.set(centroidY);
+	person.velocityX.set(velocityX);
+	person.velocityY.set(velocityY);
+	person.depth.set(depth);
+	person.boundingRectX.set(boundingRectX);
+	person.boundingRectY.set(boundingRectY);
+	person.boundingRectWidth.set(boundingRectWidth);
+	person.boundingRectHeight.set(boundingRectHeight);
+	person.highestX.set(highestX);
+	person.highestY.set(highestY);
+	person.highestZ.set(highestZ);
 }
 
 function setAugmentaScene(currentTime,
