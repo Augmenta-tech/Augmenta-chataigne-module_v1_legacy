@@ -1,7 +1,7 @@
 ﻿Augmenta Chataigne module
 =======================
 
-A [Chataigne][] Module maintained by [Théoriz studio][]
+A [Chataigne][] module maintained by [Théoriz studio][]
 
 Install
 -------
