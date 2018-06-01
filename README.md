@@ -8,7 +8,7 @@ Install
 
 Download the module here
 
-https://github.com/Lyptik/Augmenta-chataigne-module/archive/master.zip (and rename to Augmenta)
+https://github.com/Theoriz/Augmenta-chataigne-module/archive/master.zip (and rename to Augmenta)
 
 or
 
