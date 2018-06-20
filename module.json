@@ -39,6 +39,10 @@
 		{
 			"type":"Container",
 
+			"hasData":
+			{
+				"type":"Boolean"
+			},
 			"currentTime":
 			{
 				"type":"Integer",
@@ -88,6 +92,10 @@
 		{
 			"type":"Container",
 
+			"hasData":
+			{
+				"type":"Boolean"
+			},
 			"pid":
 			{
 				"type":"Integer",
@@ -182,6 +190,10 @@
 		{
 			"type":"Container",
 
+			"hasData":
+			{
+				"type":"Boolean"
+			},
 			"pid":
 			{
 				"type":"Integer",
@@ -276,6 +288,10 @@
 		{
 			"type":"Container",
 
+			"hasData":
+			{
+				"type":"Boolean"
+			},
 			"pid":
 			{
 				"type":"Integer",
@@ -370,6 +386,10 @@
 		{
 			"type":"Container",
 
+			"hasData":
+			{
+				"type":"Boolean"
+			},
 			"pid":
 			{
 				"type":"Integer",
@@ -464,6 +484,10 @@
 		{
 			"type":"Container",
 
+			"hasData":
+			{
+				"type":"Boolean"
+			},
 			"pid":
 			{
 				"type":"Integer",
@@ -557,6 +581,10 @@
 		{
 			"type":"Container",
 
+			"hasData":
+			{
+				"type":"Boolean"
+			},
 			"pid":
 			{
 				"type":"Integer",

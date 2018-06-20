@@ -8,17 +8,14 @@ This code has been tested on Chataigne 1.5.0
 
 */
 
-var newestPid = -1;
-var newestAge = 0;
-
 function oscEvent(address,args)
 {
 
-	if(address=="/au/scene")
+	if(address == "/au/scene")
 	{
 		setAugmentaScene(local.values.scene, args);
 
-	}else if (address=="/au/personUpdated")
+	} else if(address == "/au/personUpdated")
 	{
 		if(args[1] == 0) //args[1] = oid
 		{
@@ -49,6 +46,38 @@ function oscEvent(address,args)
 		{
 			updateNewest(args);
 		}
+
+	} else if(address == "/au/personWillLeave")
+	{
+		if(args[1] == 0) //args[1] = oid
+		{
+			resetAugmentaPerson(local.values.person0, args);
+
+			// Oldest is always oid = 0 if algo is correctly implemented
+			if(local.parameters.singlePersonMode.getData() == "oldest")
+			{
+				resetAugmentaPerson(local.values.singlePerson, args);	
+			}
+			
+		} else if(args[1] == 1)
+		{
+			resetAugmentaPerson(local.values.person1, args);
+		} else if(args[1] == 2)
+		{
+			resetAugmentaPerson(local.values.person2, args);
+		} else if(args[1] == 3)
+		{
+			resetAugmentaPerson(local.values.person3, args);
+		} else if(args[1] == 4)
+		{
+			resetAugmentaPerson(local.values.person4, args);
+		}
+
+		// Check and udate newest
+		if(local.parameters.singlePersonMode.getData() == "newest")
+		{
+			updateNewest(args);
+		}
 	}
 }
 
@@ -60,7 +89,7 @@ function moduleParameterChanged(param)
 
 function setAugmentaPerson(person, args)
 {
-
+	person.hasData.set(true);
 	person.pid.set(args[0]);
 	person.oid.set(args[1]);
 	person.age.set(args[2]);
@@ -78,9 +107,29 @@ function setAugmentaPerson(person, args)
 	person.highestZ.set(args[14]);
 }
 
+function resetAugmentaPerson(person)
+{
+	person.hasData.set(false);
+	person.pid.set(-1);
+	person.oid.set(-1);
+	person.age.set(0);
+	person.centroidX.set(0);
+	person.centroidY.set(0);
+	person.velocityX.set(0);
+	person.velocityY.set(0);
+	person.depth.set(0);
+	person.boundingRectX.set(0);
+	person.boundingRectY.set(0);
+	person.boundingRectWidth.set(0);
+	person.boundingRectHeight.set(0);
+	person.highestX.set(0);
+	person.highestY.set(0);
+	person.highestZ.set(0);
+}
+
 function setAugmentaScene(scene, args)
 {
-
+	scene.hasData.set(true);
 	scene.currentTime.set(args[0]);
 	scene.percentCovered.set(args[1]);
 	scene.numPeople.set(args[2]);
@@ -91,24 +140,31 @@ function setAugmentaScene(scene, args)
 	scene.depth.set(args[7]);
 }
 
+function resetAugmentaScene(scene)
+{
+	scene.hasData.set(false);
+	scene.currentTime.set(0);
+	scene.percentCovered.set(0);
+	scene.numPeople.set(0);
+	scene.averageMotionX.set(0);
+	scene.averageMotionY.set(0);
+	scene.width.set(0);
+	scene.height.set(0);
+	scene.depth.set(0);
+}
+
 function updateNewest(args)
 {
-	var pid = arg[0];
-	var age = arg[1];
+	if(args[1] == scene.numPeople - 1) // args[1] is oid
+	{
+		setAugmentaPerson(local.values.singlePerson, args);	
+	}
+}
 
-	// Check if newest
-	if(newestPid == -1) { //init
-		newestPid = pid;
-		newestAge = age;
-	}
-	else if(newestPid == pid) {
-		newestAge = age;
-	}
-
-	if(age < newestAge) {//args[2] = age
-		script.log("New newest person : " + pid);
-		newestAge = age;
-		newestPid = pid;
-		setAugmentaPerson(local.values.singlePerson, args);
-	}
+function resetNewest(args)
+{
+	if(args[1] == scene.numPeople - 1) // args[1] is oid
+	{
+		resetAugmentaPerson(local.values.singlePerson, args);	
+	}	
 }
