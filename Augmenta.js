@@ -1,4 +1,4 @@
-/* 
+/*
 
 Augmenta protocol :
 
@@ -7,18 +7,34 @@ https://github.com/Theoriz/Augmenta/wiki
 This code has been tested on Chataigne 1.5.0
 
 */
+var newestPid = -1;
+var newestAge = 0;
 
 function oscEvent(address,args)
 {
+	if(newestPid == -1) { //init
+		newestPid = args[0];
+		newestAge = args[2];
+	}
+
+	if(args[0] == newestPid) {
+		newestAge = args[2];
+	}
+
 	//script.log("received osc"+address);
+	if(args[2] < newestAge) {//args[2] = age
+		script.log("New : " + args[0]);
+		newestAge = args[2];
+		newestPid = args[0];
+	}
 
 	if(address=="/au/scene")
 	{
 		setAugmentaScene(local.values.scene, args);
 
-	}else if (address=="/au/personUpdated") // parse only persons with oid = 0
+	}else if (address=="/au/personUpdated")
 	{
-		if(args[1] == 0)
+		if(args[1] == 0) //args[1] = oid
 		{
 			setAugmentaPerson(local.values.person0, args);
 		} else if(args[1] == 1)
@@ -37,11 +53,15 @@ function oscEvent(address,args)
 
 		if(local.parameters.singlePersonMode.getData() == "newest")
 		{
-			// Fill with Newest
-
+			if(args[0] == newestPid) {
+				script.log("Update newest");
+				setAugmentaPerson(local.values.singlePerson, args);
+			}
 		} else if(local.parameters.singlePersonMode.getData() == "oldest")
 		{
-			// Fill with Oldest
+			if(args[1] == 0) {
+				setAugmentaPerson(local.values.singlePerson, args);
+			}
 		}
 	}
 }
