@@ -39,10 +39,6 @@
 		{
 			"type":"Container",
 
-			"hasData":
-			{
-				"type":"Boolean"
-			},
 			"currentTime":
 			{
 				"type":"Integer",

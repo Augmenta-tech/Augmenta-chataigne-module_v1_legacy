@@ -8,6 +8,8 @@ This code has been tested on Chataigne 1.5.0
 
 */
 
+var numPeople = 0;
+
 function oscEvent(address,args)
 {
 
@@ -76,7 +78,7 @@ function oscEvent(address,args)
 		// Check and udate newest
 		if(local.parameters.singlePersonMode.getData() == "newest")
 		{
-			updateNewest(args);
+			resetNewest(args);
 		}
 	}
 }
@@ -129,10 +131,10 @@ function resetAugmentaPerson(person)
 
 function setAugmentaScene(scene, args)
 {
-	scene.hasData.set(true);
 	scene.currentTime.set(args[0]);
 	scene.percentCovered.set(args[1]);
 	scene.numPeople.set(args[2]);
+	numPeople = args[2];
 	scene.averageMotionX.set(args[3]);
 	scene.averageMotionY.set(args[4]);
 	scene.width.set(args[5]);
@@ -140,22 +142,12 @@ function setAugmentaScene(scene, args)
 	scene.depth.set(args[7]);
 }
 
-function resetAugmentaScene(scene)
-{
-	scene.hasData.set(false);
-	scene.currentTime.set(0);
-	scene.percentCovered.set(0);
-	scene.numPeople.set(0);
-	scene.averageMotionX.set(0);
-	scene.averageMotionY.set(0);
-	scene.width.set(0);
-	scene.height.set(0);
-	scene.depth.set(0);
-}
-
 function updateNewest(args)
 {
-	if(args[1] == scene.numPeople - 1) // args[1] is oid
+
+	//script.log("num people : " + scene.numPeople);
+
+	if(args[1] == (numPeople - 1)) // args[1] is oid
 	{
 		setAugmentaPerson(local.values.singlePerson, args);	
 	}
@@ -163,7 +155,7 @@ function updateNewest(args)
 
 function resetNewest(args)
 {
-	if(args[1] == scene.numPeople - 1) // args[1] is oid
+	if(args[1] == (numPeople - 1)) // args[1] is oid
 	{
 		resetAugmentaPerson(local.values.singlePerson, args);	
 	}	
