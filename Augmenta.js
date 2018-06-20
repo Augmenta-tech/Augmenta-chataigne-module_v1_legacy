@@ -7,26 +7,12 @@ https://github.com/Theoriz/Augmenta/wiki
 This code has been tested on Chataigne 1.5.0
 
 */
+
 var newestPid = -1;
 var newestAge = 0;
 
 function oscEvent(address,args)
 {
-	if(newestPid == -1) { //init
-		newestPid = args[0];
-		newestAge = args[2];
-	}
-
-	if(args[0] == newestPid) {
-		newestAge = args[2];
-	}
-
-	//script.log("received osc"+address);
-	if(args[2] < newestAge) {//args[2] = age
-		script.log("New : " + args[0]);
-		newestAge = args[2];
-		newestPid = args[0];
-	}
 
 	if(address=="/au/scene")
 	{
@@ -37,6 +23,13 @@ function oscEvent(address,args)
 		if(args[1] == 0) //args[1] = oid
 		{
 			setAugmentaPerson(local.values.person0, args);
+
+			// Oldest is always oid = 0 if algo is correctly implemented
+			if(local.parameters.singlePersonMode.getData() == "oldest")
+			{
+				setAugmentaPerson(local.values.singlePerson, args);	
+			}
+			
 		} else if(args[1] == 1)
 		{
 			setAugmentaPerson(local.values.person1, args);
@@ -51,17 +44,10 @@ function oscEvent(address,args)
 			setAugmentaPerson(local.values.person4, args);
 		}
 
+		// Check and udate newest
 		if(local.parameters.singlePersonMode.getData() == "newest")
 		{
-			if(args[0] == newestPid) {
-				script.log("Update newest");
-				setAugmentaPerson(local.values.singlePerson, args);
-			}
-		} else if(local.parameters.singlePersonMode.getData() == "oldest")
-		{
-			if(args[1] == 0) {
-				setAugmentaPerson(local.values.singlePerson, args);
-			}
+			updateNewest(args);
 		}
 	}
 }
@@ -103,4 +89,26 @@ function setAugmentaScene(scene, args)
 	scene.width.set(args[5]);
 	scene.height.set(args[6]);
 	scene.depth.set(args[7]);
+}
+
+function updateNewest(args)
+{
+	var pid = arg[0];
+	var age = arg[1];
+
+	// Check if newest
+	if(newestPid == -1) { //init
+		newestPid = pid;
+		newestAge = age;
+	}
+	else if(newestPid == pid) {
+		newestAge = age;
+	}
+
+	if(age < newestAge) {//args[2] = age
+		script.log("New newest person : " + pid);
+		newestAge = age;
+		newestPid = pid;
+		setAugmentaPerson(local.values.singlePerson, args);
+	}
 }
