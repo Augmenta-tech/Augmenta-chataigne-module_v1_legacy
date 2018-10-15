@@ -17,7 +17,7 @@ function oscEvent(address,args)
 	{
 		setAugmentaScene(local.values.scene, args);
 
-	} else if(address == "/au/personUpdated")
+	} else if(address == "/au/personUpdated" || address == "/au/personEntered")
 	{
 		if(args[1] == 0) //args[1] = oid
 		{
@@ -75,7 +75,7 @@ function oscEvent(address,args)
 			resetAugmentaPerson(local.values.person4, args);
 		}
 
-		// Check and udate newest
+		// Check and update newest
 		if(local.parameters.singlePersonMode.getData() == "newest")
 		{
 			resetNewest(args);
@@ -112,7 +112,7 @@ function setAugmentaPerson(person, args)
 function resetAugmentaPerson(person)
 {
 	person.hasData.set(false);
-	person.pid.set(-1);
+	/*person.pid.set(-1);
 	person.oid.set(-1);
 	person.age.set(0);
 	person.centroidX.set(0);
@@ -126,7 +126,7 @@ function resetAugmentaPerson(person)
 	person.boundingRectHeight.set(0);
 	person.highestX.set(0);
 	person.highestY.set(0);
-	person.highestZ.set(0);
+	person.highestZ.set(0);*/
 }
 
 function setAugmentaScene(scene, args)
