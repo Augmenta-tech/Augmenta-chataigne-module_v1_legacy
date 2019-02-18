@@ -2,7 +2,9 @@
 	"name":"Augmenta",
 	"type":"OSC",
 	"path":"Theoriz",
-
+	"version":"1.0.0",
+	"description":"Get tracking data from Theoriz's Augmenta system",
+	
 	"hasInput":true,
 	"hasOutput":false,
 
