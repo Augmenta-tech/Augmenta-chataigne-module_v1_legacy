@@ -1,19 +1,20 @@
 ﻿Augmenta Chataigne module
-=======================
+=========================
 
 A [Chataigne][] module maintained by [Théoriz studio][]
 
 Install
 -------
 
-Download the module here
-
-https://github.com/Theoriz/Augmenta-chataigne-module/archive/master.zip (and rename to Augmenta)
+Start Chataigne
+Right click on the modules panel
+CLick on "Get more modules"
+Install the module :)
 
 or
 
 ```
-git clone https://github.com/Theoriz/Augmenta-chataigne-module Augmenta
+git clone https://github.com/Theoriz/Augmenta-chataigne-module
 ```
 
 in the following directory
@@ -21,8 +22,6 @@ in the following directory
 - Mac OSX : /Users/Username/Documents/Chataigne/modules
 - Windows : C:\Users\Username\Documents\Chataigne\modules
 - Linux   : /home/Username/Chataigne/modules
-
-Ensure that they are in a folder named *Augmenta* in this directory.
 
 Then restart [Chataigne][]
 
