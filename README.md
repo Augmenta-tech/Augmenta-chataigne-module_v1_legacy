@@ -6,10 +6,10 @@ A [Chataigne][] module maintained by [Théoriz studio][]
 Install
 -------
 
-Start Chataigne
-Right click on the modules panel
-CLick on "Get more modules"
-Install the module :)
+- Start Chataigne
+- Right click on the modules panel
+- Click on "Get more modules"
+- Install the module :)
 
 or
 
