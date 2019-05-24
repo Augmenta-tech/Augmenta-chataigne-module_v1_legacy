@@ -11,6 +11,7 @@
 	"hasInput":true,
 	"hasOutput":false,
 	"hideDefaultCommands":true,
+	"hideDefaultParameters": ["autoRange", "autoFeedback"],
 
 	"parameters":
 	{
@@ -96,7 +97,8 @@
 
 			"hasData":
 			{
-				"type":"Boolean"
+				"type":"Boolean",
+				"ReadOnly":true,
 			},
 			"pid":
 			{
@@ -194,7 +196,8 @@
 
 			"hasData":
 			{
-				"type":"Boolean"
+				"type":"Boolean",
+				"ReadOnly":true,
 			},
 			"pid":
 			{
@@ -292,7 +295,8 @@
 
 			"hasData":
 			{
-				"type":"Boolean"
+				"type":"Boolean",
+				"ReadOnly":true,
 			},
 			"pid":
 			{
@@ -390,7 +394,9 @@
 
 			"hasData":
 			{
-				"type":"Boolean"
+				"type":"Boolean",
+				"ReadOnly":true,
+
 			},
 			"pid":
 			{
@@ -488,7 +494,8 @@
 
 			"hasData":
 			{
-				"type":"Boolean"
+				"type":"Boolean",
+				"ReadOnly":true,
 			},
 			"pid":
 			{
@@ -585,7 +592,8 @@
 
 			"hasData":
 			{
-				"type":"Boolean"
+				"type":"Boolean",
+				"ReadOnly":true,
 			},
 			"pid":
 			{

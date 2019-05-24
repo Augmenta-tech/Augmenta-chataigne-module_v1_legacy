@@ -4,7 +4,7 @@ Augmenta protocol :
 
 https://github.com/Theoriz/Augmenta/wiki
 
-This code has been tested on Chataigne 1.5.0
+This code has been tested on Chataigne 1.6.0
 
 */
 
@@ -81,12 +81,6 @@ function oscEvent(address,args)
 			resetNewest(args);
 		}
 	}
-}
-
-function moduleParameterChanged(param)
-{
-
-	script.log("Parameter changed : "+param.name+" : "+param.get());
 }
 
 function setAugmentaPerson(person, args)
