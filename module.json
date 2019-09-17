@@ -64,15 +64,11 @@
 			},
 			"averageMotionX":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Float"
 			},
 			"averageMotionY":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Float"
 			},
 			"width":
 			{
@@ -124,21 +120,15 @@
 			},
 			"centroidY":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Float"
 			},
 			"velocityX":
 			{
-				"type":"Float",
-				"min":-1,
-				"max":1
+				"type":"Float"
 			},
 			"velocityY":
 			{
-				"type":"Float",
-				"min":-1,
-				"max":1
+				"type":"Float"
 			},
 			"depth":
 			{
