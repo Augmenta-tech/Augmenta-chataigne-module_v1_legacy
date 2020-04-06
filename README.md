@@ -1,5 +1,5 @@
-﻿Augmenta Chataigne module
-=========================
+﻿Augmenta Chataigne module v1
+=============================
 
 A [Chataigne][] module maintained by [Théoriz studio][]
 
