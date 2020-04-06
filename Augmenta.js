@@ -10,6 +10,40 @@ This code has been tested on Chataigne 1.6.0
 
 var numPeople = 0;
 
+function init()
+{
+	local.parameters.pass_through.setCollapsed(true);
+	local.values.singlePerson.setCollapsed(true);
+}
+
+function moduleParameterChanged(param)
+{
+	if(param.is(local.parameters.singlePersonMode)) {
+
+		if(local.parameters.singlePersonMode.getData() == "none")
+		{
+				script.log("foonone");
+
+			local.values.singlePerson.setCollapsed(true);
+			local.values.person0.setCollapsed(false);
+			local.values.person1.setCollapsed(false);
+			local.values.person2.setCollapsed(false);
+			local.values.person3.setCollapsed(false);
+			local.values.person4.setCollapsed(false);
+		} else {
+
+							script.log("foo");
+
+			local.values.singlePerson.setCollapsed(false);
+			local.values.person0.setCollapsed(true);
+			local.values.person1.setCollapsed(true);
+			local.values.person2.setCollapsed(true);
+			local.values.person3.setCollapsed(true);
+			local.values.person4.setCollapsed(true);
+		}
+	}
+}
+
 function oscEvent(address,args)
 {
 
