@@ -22,18 +22,14 @@ function moduleParameterChanged(param)
 
 		if(local.parameters.singlePersonMode.getData() == "none")
 		{
-				script.log("foonone");
-
 			local.values.singlePerson.setCollapsed(true);
 			local.values.person0.setCollapsed(false);
 			local.values.person1.setCollapsed(false);
 			local.values.person2.setCollapsed(false);
 			local.values.person3.setCollapsed(false);
 			local.values.person4.setCollapsed(false);
+			
 		} else {
-
-							script.log("foo");
-
 			local.values.singlePerson.setCollapsed(false);
 			local.values.person0.setCollapsed(true);
 			local.values.person1.setCollapsed(true);
