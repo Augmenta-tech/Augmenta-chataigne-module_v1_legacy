@@ -8,18 +8,18 @@ This code has been tested on Chataigne 1.6.0
 
 */
 
-var numPeople = 0;
+var numPeopleDisplay = 2;
+personContainerArray = [];
+var currentProtocolVersion;
 
 function init()
 {
 	local.parameters.pass_through.setCollapsed(true);
 	local.values.singlePerson.setCollapsed(true);
-	local.scripts.setCollapsed(true);
-
-	for(var i = 0 ; i < maxObjectsDisplayed ; i++)
-	{	
-		local.values.getChild("object" + i).setCollapsed(true);
-	}
+	//local.scripts.setCollapsed(true);
+	currentProtocolVersion = local.parameters.protocolVersion.getData();
+	script.log("init");
+	generateInterface(numPeopleDisplay, local.parameters.protocolVersion.getData());
 }
 
 function moduleParameterChanged(param)
@@ -43,6 +43,53 @@ function moduleParameterChanged(param)
 			local.values.person3.setCollapsed(true);
 			local.values.person4.setCollapsed(true);
 		}
+	} else if(param.is(local.parameters.protocolVersion)) {
+
+		// clean and rebuild interface on parameter changed
+		
+		var arrayLength = personContainerArray.length;
+		for (var i = 0; i < numPeopleDisplay; i++)
+		{
+			script.log("removing " + i );
+			//local.values.removeContainer("person" + i);
+		}
+
+		script.log(": after personContainerArray.length : " + personContainerArray.length);
+			local.values.removeContainer("person0");
+
+		generateInterface(numPeopleDisplay, local.parameters.protocolVersion.getData());
+
+	}
+}
+
+function generateInterface(objectCount, type)
+{
+			script.log(" type " + type + "personContainerArray.length : " + personContainerArray.length);
+
+	for (var i = 0; i < objectCount; i++) {
+		
+		script.log("foo");
+		addPersonContainer(type,i);
+	}
+				script.log("personContainerArray.length : " + personContainerArray.length);
+
+}
+
+function addPersonContainer(type, i)
+{
+	if(type == "v1")
+	{
+		personContainerArray.push(local.values.addContainer("person" + i));
+
+		// protocol V1
+		personContainerArray[i].addFloatParameter("V1CentroidX","The centroid",0,0,1);
+
+	} else if (type == "v2")
+	{
+		personContainerArray.push(local.values.addContainer("person" + i));
+
+		// protocol V1
+		personContainerArray[i].addFloatParameter("V2CentroidX","The centroid",0,0,1);
 	}
 }
 
