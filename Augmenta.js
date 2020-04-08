@@ -14,6 +14,12 @@ function init()
 {
 	local.parameters.pass_through.setCollapsed(true);
 	local.values.singlePerson.setCollapsed(true);
+	local.scripts.setCollapsed(true);
+
+	for(var i = 0 ; i < maxObjectsDisplayed ; i++)
+	{	
+		local.values.getChild("object" + i).setCollapsed(true);
+	}
 }
 
 function moduleParameterChanged(param)
