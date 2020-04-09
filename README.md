@@ -27,10 +27,13 @@ Then restart [Chataigne][]
 
 Use
 ---
+
 In [Chataigne][], the module will appear in a Theoriz submenu alongside the other modules.
 
 Documentation
 -------------
+
+This module receives protocol in V1 version, please check this repository : https://github.com/Theoriz/Augmenta-chataigne-module
 
 Data protocol is here : https://github.com/Theoriz/Augmenta/wiki
 
