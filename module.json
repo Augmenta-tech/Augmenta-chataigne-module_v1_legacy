@@ -1,9 +1,9 @@
 {
-	"name":"Augmenta legacy (v1)",
+	"name":"Augmenta (v1)",
 	"type":"OSC",
 	"path":"Theoriz",
 	
-	"version":"1.1.0",
+	"version":"1.1.1",
 	"description":"Get tracking data from THEORIZ's Augmenta tracking system v1",
 	"url":"https://github.com/Theoriz/Augmenta-chataigne-module_v1_legacy",
 	"downloadURL":"https://github.com/Theoriz/Augmenta-chataigne-module_v1_legacy/archive/master.zip",
@@ -63,13 +63,9 @@
 				"type":"Integer",
 				"min":0
 			},
-			"averageMotionX":
+			"averageMotion":
 			{
-				"type":"Float"
-			},
-			"averageMotionY":
-			{
-				"type":"Float"
+				"type":"Point2D"
 			},
 			"width":
 			{
@@ -113,23 +109,15 @@
 				"type":"Integer",
 				"min":0
 			},
-			"centroidX":
+			"centroid":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Point2D",
+				"min":[0,0],
+				"max":[1,1]
 			},
-			"centroidY":
+			"velocity":
 			{
-				"type":"Float"
-			},
-			"velocityX":
-			{
-				"type":"Float"
-			},
-			"velocityY":
-			{
-				"type":"Float"
+				"type":"Point2D"
 			},
 			"depth":
 			{
@@ -137,17 +125,11 @@
 				"min":0,
 				"max":1
 			},
-			"boundingRectX":
+			"boundingRectCoord":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"boundingRectY":
-			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Point2D",
+				"min":[0,0],
+				"max":[1,1]
 			},
 			"boundingRectWidth":
 			{
@@ -161,23 +143,11 @@
 				"min":0,
 				"max":1
 			},
-			"HighestX":
+			"HighestPoint":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"HighestY":
-			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"HighestZ":
-			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Point3D",
+				"min":[0,0,0],
+				"max":[1,1]
 			}
 		},
 
@@ -206,29 +176,15 @@
 				"type":"Integer",
 				"min":0
 			},
-			"centroidX":
+			"centroid":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Point2D",
+				"min":[0,0],
+				"max":[1,1]
 			},
-			"centroidY":
+			"velocity":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"velocityX":
-			{
-				"type":"Float",
-				"min":-1,
-				"max":1
-			},
-			"velocityY":
-			{
-				"type":"Float",
-				"min":-1,
-				"max":1
+				"type":"Point2D"
 			},
 			"depth":
 			{
@@ -236,17 +192,11 @@
 				"min":0,
 				"max":1
 			},
-			"boundingRectX":
+			"boundingRectCoord":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"boundingRectY":
-			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Point2D",
+				"min":[0,0],
+				"max":[1,1]
 			},
 			"boundingRectWidth":
 			{
@@ -260,25 +210,14 @@
 				"min":0,
 				"max":1
 			},
-			"HighestX":
+			"HighestPoint":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"HighestY":
-			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"HighestZ":
-			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Point3D",
+				"min":[0,0,0],
+				"max":[1,1]
 			}
 		},
+
 
 		"Person 1":
 		{
@@ -305,29 +244,15 @@
 				"type":"Integer",
 				"min":0
 			},
-			"centroidX":
+			"centroid":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Point2D",
+				"min":[0,0],
+				"max":[1,1]
 			},
-			"centroidY":
+			"velocity":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"velocityX":
-			{
-				"type":"Float",
-				"min":-1,
-				"max":1
-			},
-			"velocityY":
-			{
-				"type":"Float",
-				"min":-1,
-				"max":1
+				"type":"Point2D"
 			},
 			"depth":
 			{
@@ -335,17 +260,11 @@
 				"min":0,
 				"max":1
 			},
-			"boundingRectX":
+			"boundingRectCoord":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"boundingRectY":
-			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Point2D",
+				"min":[0,0],
+				"max":[1,1]
 			},
 			"boundingRectWidth":
 			{
@@ -359,23 +278,11 @@
 				"min":0,
 				"max":1
 			},
-			"HighestX":
+			"HighestPoint":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"HighestY":
-			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"HighestZ":
-			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Point3D",
+				"min":[0,0,0],
+				"max":[1,1]
 			}
 		},
 
@@ -387,7 +294,6 @@
 			{
 				"type":"Boolean",
 				"ReadOnly":true,
-
 			},
 			"pid":
 			{
@@ -405,29 +311,15 @@
 				"type":"Integer",
 				"min":0
 			},
-			"centroidX":
+			"centroid":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Point2D",
+				"min":[0,0],
+				"max":[1,1]
 			},
-			"centroidY":
+			"velocity":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"velocityX":
-			{
-				"type":"Float",
-				"min":-1,
-				"max":1
-			},
-			"velocityY":
-			{
-				"type":"Float",
-				"min":-1,
-				"max":1
+				"type":"Point2D"
 			},
 			"depth":
 			{
@@ -435,17 +327,11 @@
 				"min":0,
 				"max":1
 			},
-			"boundingRectX":
+			"boundingRectCoord":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"boundingRectY":
-			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Point2D",
+				"min":[0,0],
+				"max":[1,1]
 			},
 			"boundingRectWidth":
 			{
@@ -459,23 +345,11 @@
 				"min":0,
 				"max":1
 			},
-			"HighestX":
+			"HighestPoint":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"HighestY":
-			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"HighestZ":
-			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Point3D",
+				"min":[0,0,0],
+				"max":[1,1]
 			}
 		},
 
@@ -504,29 +378,15 @@
 				"type":"Integer",
 				"min":0
 			},
-			"centroidX":
+			"centroid":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Point2D",
+				"min":[0,0],
+				"max":[1,1]
 			},
-			"centroidY":
+			"velocity":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"velocityX":
-			{
-				"type":"Float",
-				"min":-1,
-				"max":1
-			},
-			"velocityY":
-			{
-				"type":"Float",
-				"min":-1,
-				"max":1
+				"type":"Point2D"
 			},
 			"depth":
 			{
@@ -534,17 +394,11 @@
 				"min":0,
 				"max":1
 			},
-			"boundingRectX":
+			"boundingRectCoord":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"boundingRectY":
-			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Point2D",
+				"min":[0,0],
+				"max":[1,1]
 			},
 			"boundingRectWidth":
 			{
@@ -558,23 +412,11 @@
 				"min":0,
 				"max":1
 			},
-			"HighestX":
+			"HighestPoint":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"HighestY":
-			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"HighestZ":
-			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Point3D",
+				"min":[0,0,0],
+				"max":[1,1]
 			}
 		},
 		"Person 4":
@@ -602,29 +444,15 @@
 				"type":"Integer",
 				"min":0
 			},
-			"centroidX":
+			"centroid":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Point2D",
+				"min":[0,0],
+				"max":[1,1]
 			},
-			"centroidY":
+			"velocity":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"velocityX":
-			{
-				"type":"Float",
-				"min":-1,
-				"max":1
-			},
-			"velocityY":
-			{
-				"type":"Float",
-				"min":-1,
-				"max":1
+				"type":"Point2D"
 			},
 			"depth":
 			{
@@ -632,17 +460,11 @@
 				"min":0,
 				"max":1
 			},
-			"boundingRectX":
+			"boundingRectCoord":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"boundingRectY":
-			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Point2D",
+				"min":[0,0],
+				"max":[1,1]
 			},
 			"boundingRectWidth":
 			{
@@ -656,23 +478,11 @@
 				"min":0,
 				"max":1
 			},
-			"HighestX":
+			"HighestPoint":
 			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"HighestY":
-			{
-				"type":"Float",
-				"min":0,
-				"max":1
-			},
-			"HighestZ":
-			{
-				"type":"Float",
-				"min":0,
-				"max":1
+				"type":"Point3D",
+				"min":[0,0,0],
+				"max":[1,1]
 			}
 		}
 	}
