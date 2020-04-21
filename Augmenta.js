@@ -16,6 +16,7 @@ function init()
 	local.parameters.pass_through.setCollapsed(true);
 	local.values.singlePerson.setCollapsed(true);
 	local.scripts.setCollapsed(true);
+	local.scripts.getChild("Augmenta").enableLog.set(true);
 
 	for(var i = 0 ; i < maxPersonDisplayed ; i++)
 	{	
@@ -116,6 +117,9 @@ function oscEvent(address,args)
 		} else if(local.parameters.singlePersonMode.get() == "newest" && args[1] == getNewestId())
 		{
 			resetAugmentaPerson(local.values.singlePerson);
+		} else if(address == "/scene")
+		{
+			script.logWarning(" : This module can display only V1 protocol data, not V2+");
 		}
 	}
 }
